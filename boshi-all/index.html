@@ -315,5 +315,28 @@ wp.i18n.setLocaleData( { 'text directionltr': [ 'ltr' ] } );
 <script id="elementor-frontend-js-before">var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"3.27.6","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"e_swiper_latest":true,"e_onboarding":true,"theme_builder_v2":true,"home_screen":true,"nested-elements":true,"editor_v2":true,"e_element_cache":true,"link-in-bio":true,"floating-buttons":true,"launchpad-checklist":true},"urls":{"assets":".\/\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":".\/\/wp-admin\/admin-ajax.php","uploadUrl":".\/\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"7b66e42e4d"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":19827,"title":"%28%E5%A2%93%E8%AA%8C%29%20%E5%85%A8%E6%95%85%E4%BA%BA%20%E2%80%93%20WP%20Static2","excerpt":"","featuredImage":false}};</script>
 <script src="./../wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.27.6" id="elementor-frontend-js"></script>
 <script src="./../wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.27.5" id="pro-elements-handlers-js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Find all carousel elements (assuming they have a class of 'e-n-carousel' and 'swiper')
+  document.querySelectorAll('.e-n-carousel.swiper').forEach(function(carouselEl) {
+    // Initialize the Swiper instance
+    new Swiper(carouselEl, {
+      slidesPerView: 1,
+      loop: true,
+      autoplay: { delay: 1000 },
+      speed: 500,
+      navigation: {
+        nextEl: carouselEl.parentElement.querySelector('.elementor-swiper-button-next'),
+        prevEl: carouselEl.parentElement.querySelector('.elementor-swiper-button-prev')
+      },
+      pagination: {
+        el: carouselEl.parentElement.querySelector('.swiper-pagination'),
+        clickable: true
+      }
+    });
+  });
+});
+</script>
+
 	</body>
 </html>
